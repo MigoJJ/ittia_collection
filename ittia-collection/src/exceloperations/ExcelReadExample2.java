@@ -9,78 +9,71 @@ import java.util.Collection;
 import org.apache.commons.collections4.Get;
 import org.apache.poi.xssf.usermodel.*;
 
-public class ExcelReadExample {
+public class ExcelReadExample2 {
 	public static void main(String[] args) throws IOException {
 		String excelFilePath = "/home/migowj/git/ittia_collection/ittia-collection/src/array1234/Thyroidpe.xlsx";
 		FileInputStream inputstream = new FileInputStream(excelFilePath);
-		
 		XSSFWorkbook workbook =  new XSSFWorkbook(inputstream) ;
 		XSSFSheet sheet = workbook.getSheetAt(2); //XSSFSheet sheet = new workbook.getSheet("Sheet");
 		
 		int rows = sheet.getLastRowNum();
 		int cols = sheet.getRow(1).getLastCellNum();
+
+		ArrayList<String> thyoridList = new ArrayList<>(Arrays.asList());
 		
 		try {
-
 			for(int r=0; r<=rows; r++) {
-				
-				  System.out.print("[rows]  : " + rows);
-				
-				
+			  System.out.print("[rows]  : " + rows);
 				XSSFRow row = sheet.getRow(r);// 0
-//				XSSFRow row = sheet.getRow(0);// 0
-
-				
-//				for(int c=0; c< cols;c++) {
-//					XSSFCell cell = row.getCell(c);
 					XSSFCell cell = row.getCell(1);
-
 					
 					if (cell != null) {
-//					ArrayList<String> thyoridList = new ArrayList<>(Arrays.asList());
 					switch(cell.getCellType()) {
 						case STRING:
-//							System.out.print(cell.getStringCellValue()+ "\t"); 
 							String getrc = (cell.getStringCellValue()+ "\t");
-							  ArrayList<String> thyoridList = new ArrayList<>(Arrays.asList(getrc));
-							  ArrayList<String> thyoridList1 = new ArrayList<>(thyoridList);
-							  
-							  thyoridList1.add(getrc);
-							  System.out.print(thyoridList1);
-							  //							  thyoridList.set(r, getrc);
-							  
-//							  doSomething(getrc);
-//							System.out.print(doSomething(getrc));
-							
+							thyoridList.add(getrc);
+							  System.out.print(thyoridList);
 							break;
 						case NUMERIC:System.out.print(cell.getNumericCellValue()+ "\t"); break;
 						case BOOLEAN:System.out.print(cell.getBooleanCellValue()+ "\t"); break;
 					default:
 						break;
 					}
-					
 					}
 //				}
 				System.out.println();
-
-
-				
 			}  //---col
+			
+			  System.out.print(thyoridList);
+			  
+		
+			  for(String i : thyoridList) {
+
+	            System.out.println("thyoridList   : " + i);
+	            
+	        }
+			  
+			  
+			  
+			  
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	
-//    private static String[] doSomething(String getrc) {
-//	
-//		  System.out.println(getrc);
-//    	 
-//        return getrc;
-//    }
-	
-	
-	
+    public static void addArrayListMethod(ArrayList<String> thyoridList)
+    {
+        ArrayList<String> arrayList = new ArrayList<>();        arrayList.addAll(thyoridList);
+        for(String i : arrayList) {
+//            System.out.println("arrayList 값 : " + i );
+            
+            ArrayList<String> arrayList2 = new ArrayList<>();
+            arrayList2.add(i);
+            System.out.println("arrayList2" + arrayList2);
+            
+        }
+    }
+
 //----------------------------------------------------------
 }
