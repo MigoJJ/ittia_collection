@@ -11,8 +11,8 @@ import java.util.Scanner;
 import org.apache.commons.collections4.Get;
 import org.apache.poi.xssf.usermodel.*;
 
-public class ErcThyroidGoiterProc {
-	public void main(int sheeNo, int columNo) throws IOException {
+public class ErcThyroidGoiterPickup {
+	public static void main(int sheeNo, int columNo, int rowNo) throws IOException {
 		String excelFilePath = ("/home/migoey/git/ittia_collection/ForuGate/src/datafile/ThyroidMenuList.xlsx");
 		FileInputStream inputstream = new FileInputStream(excelFilePath);
 		XSSFWorkbook workbook =  new XSSFWorkbook(inputstream) ;
@@ -23,8 +23,8 @@ public class ErcThyroidGoiterProc {
 
 		ArrayList<String> thyoridList = new ArrayList<>(Arrays.asList());
 		
-		try {
-			for(int r=0; r<=rows; r++) {
+		try { int r= rowNo;
+//			for(int r=0; r<=rows; r++) {
 //			  System.out.print("[rows]  : " + rows);
 				XSSFRow row = sheet.getRow(r);// 0
 					XSSFCell cell = row.getCell(columNo);
@@ -46,7 +46,7 @@ public class ErcThyroidGoiterProc {
 							}
 					}
 					System.out.println();
-			}  //---col
+//			}  //---col
 
 			iwbtList(thyoridList);
 		} catch (Exception e) {
@@ -61,11 +61,11 @@ public class ErcThyroidGoiterProc {
 			System.out.printf(" %s \n",i);
 			System.out.println(">>> insert code ...");
 
-	        Scanner sc = new Scanner(System.in);
-	        System.out.println("Enter a value :");
-	        int str = sc.nextInt();
-	        System.out.println("User input: " + str);	
-		    ErcThyroidGoiterPickup.main(1,0,str);
+		    byte b[]=new byte[8];
+		    System.in.read(b);
+		    String s =new String(b);
+		    System.out.println(s);		
+			
 			r= r+1;
         }
     }
