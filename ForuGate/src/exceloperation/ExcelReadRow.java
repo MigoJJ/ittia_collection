@@ -29,18 +29,10 @@ public class ExcelReadRow {
 				XSSFRow row = sheet.getRow(r);// 0
 					XSSFCell cell = row.getCell(columNo);
 					
-					
-			    	InputStreamReader var = new InputStreamReader(System.in);	// 값을 입력
-			        
-			        while(true)
-			        {
-			          int i = var.read();		// var에 입력된 값을 하나씩 읽어들여 아스키 코드를 i에 반환
-			          if(i==-1) break;		// ctrl+z를 누르면 반복문 탈출
-			          
-			          System.out.println((char)i);	// 아스키 코드 값을 문자로 변환하여 출력
-			        }
-					
 					if (cell != null) {
+						
+												
+						
 						switch(cell.getCellType()) {
 							case STRING:
 								String getrc = (cell.getStringCellValue()+ "\t");
@@ -67,12 +59,15 @@ public class ExcelReadRow {
 //		  System.out.print(thyoridList);
 		int r=0;
 		for(String i : thyoridList) {
-			if(r==0) {
-			System.out.printf(" >> %s\n",i);
-			System.out.printf(" ......................\n");
-			}else {
-			System.out.printf(" [ %d ] %s \n",r,i);
-			}
+//			if(r==0) {
+//			System.out.printf(" >> %s\n",i);
+//			System.out.printf(" ......................\n");
+//			}else {
+//			System.out.printf(" [ %d ] %s \n",r,i);
+			System.out.printf(" %s \n",i);
+						
+						
+//			}
 			r= r+1;
         }
     }
