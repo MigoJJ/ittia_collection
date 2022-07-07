@@ -1,4 +1,4 @@
-package exceloperation;
+package exceloperation.comm;
 
 import java.io.FileInputStream;	
 import java.io.IOException;

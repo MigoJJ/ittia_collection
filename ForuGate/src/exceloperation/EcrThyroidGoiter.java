@@ -2,10 +2,10 @@ package exceloperation;
 
 import java.io.IOException;
 
-public class ExceCallRow {
+public class EcrThyroidGoiter {
 
 	public static void main(String[] args) throws IOException {
-		ExcelReadRow erc2 = new ExcelReadRow();
+		ErcThyroidGoiterProc erc2 = new ErcThyroidGoiterProc();
 		erc2.main(0,0);// TODO Auto-generated method stub
 
 	}

@@ -1,4 +1,4 @@
-package exceloperation;
+package exceloperation.comm;
 
 import java.io.FileInputStream;	
 import java.io.IOException;
@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.*;
 
 public class ExcelReadCol {
 	public void main(int sheeNo, int columNo) throws IOException {
-		String excelFilePath = ("/home/migowj/git/ittia_collection/ForuGate/src/datafile/ThyroidMenuList.xlsx");
+		String excelFilePath = ("/home/migoey/git/ittia_collection/ForuGate/src/datafile/ThyroidMenuList.xlsx");
 		FileInputStream inputstream = new FileInputStream(excelFilePath);
 		XSSFWorkbook workbook =  new XSSFWorkbook(inputstream) ;
 		XSSFSheet sheet = workbook.getSheetAt(sheeNo); //XSSFSheet sheet = new workbook.getSheet("Sheet");
