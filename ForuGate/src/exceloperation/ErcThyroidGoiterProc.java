@@ -41,6 +41,7 @@ public class ErcThyroidGoiterProc {
 					System.out.println();
 			}  //---col
 			iwbtList(thyoridList);
+			System.out.println(thyoridList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

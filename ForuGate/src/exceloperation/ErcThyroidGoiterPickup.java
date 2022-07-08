@@ -28,11 +28,7 @@ public class ErcThyroidGoiterPickup {
 //			  System.out.print("[rows]  : " + rows);
 				XSSFRow row = sheet.getRow(r);// 0
 					XSSFCell cell = row.getCell(columNo);
-					
 					if (cell != null) {
-						
-												
-						
 						switch(cell.getCellType()) {
 							case STRING:
 								String getrc = (cell.getStringCellValue()+ "\t");
@@ -48,7 +44,7 @@ public class ErcThyroidGoiterPickup {
 					System.out.println();
 //			}  //---col
 
-			iwbtList(thyoridList);
+//			iwbtList(thyoridList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
