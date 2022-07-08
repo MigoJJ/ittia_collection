@@ -20,24 +20,17 @@ public class ErcThyroidGoiterProc {
 		
 		int rows = sheet.getLastRowNum();
 		int cols = sheet.getRow(1).getLastCellNum();
-
 		ArrayList<String> thyoridList = new ArrayList<>(Arrays.asList());
-		
 		try {
 			for(int r=0; r<=rows; r++) {
 //			  System.out.print("[rows]  : " + rows);
 				XSSFRow row = sheet.getRow(r);// 0
 					XSSFCell cell = row.getCell(columNo);
-					
 					if (cell != null) {
-						
-												
-						
 						switch(cell.getCellType()) {
 							case STRING:
 								String getrc = (cell.getStringCellValue()+ "\t");
 								thyoridList.add(getrc);
-//								  System.out.print(thyoridList);
 								break;
 							case NUMERIC:System.out.print(cell.getNumericCellValue()+ "\t"); break;
 							case BOOLEAN:System.out.print(cell.getBooleanCellValue()+ "\t"); break;
@@ -47,7 +40,6 @@ public class ErcThyroidGoiterProc {
 					}
 					System.out.println();
 			}  //---col
-
 			iwbtList(thyoridList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -62,7 +54,6 @@ public class ErcThyroidGoiterProc {
 			System.out.println(">>> insert code ...");
 
 	        Scanner sc = new Scanner(System.in);
-	        System.out.println("Enter a value :");
 	        int str = sc.nextInt();
 	        System.out.println("User input: " + str);	
 		    ErcThyroidGoiterPickup.main(1,0,str);
